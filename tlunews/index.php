@@ -3,3 +3,6 @@
     echo APP_ROOT;
 ?>
 
+<?php 
+    echo "manhmanh"
+?>
