@@ -18,5 +18,18 @@
             public function dashboard(){
                 require APP_ROOT.'/views/admin/dashboard.php';
             }
+        public function add(){
+    
+                include APP_ROOT.'/views/admin/news/add.php';
+                
+            }
+        public function dashboards(){
+            $adminService = new AdminService();
+            $news = $adminService->getAllNews();
+            require APP_ROOT.'/views/admin/dashboard.php';
+            }
+        public function edit(){
+            include APP_ROOT.'/views/admin/news/edit.php';
+        }
     }
 ?>

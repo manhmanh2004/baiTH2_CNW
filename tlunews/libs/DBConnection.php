@@ -7,10 +7,10 @@
         private $conn ;
 
         public function __construct(){
-            $this->host = DB_HOST ;
-            $this->user = DB_USER ;
-            $this->password = DB_PASS ;
-            $this->dbname = DB_NAME ;
+            $this->host = "localhost" ;
+            $this->user = "root" ;
+            $this->password = "" ;
+            $this->dbname = "tintuc" ;
             try {
                 //buoc1 : ket noi data
                 $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}",$this->user,$this->password);

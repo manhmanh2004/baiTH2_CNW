@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-$error = ''; // Variable to store error message
+$error = ''; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Sanitize user input
+  
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     if ($user->getUsername()==$username and $user->getPassword()==$password) {
         $_SESSION['user_id'] = $user->getId();
         $_SESSION['username'] = $user->getUsername();
-        header(require APP_ROOT.'/views/admin/dashboard.php');
+        require APP_ROOT.'/views/admin/dashboard.php';
         exit;
     } else {
-        // Login failed
+        
         $error = "Invalid username or password.";
     }
 }

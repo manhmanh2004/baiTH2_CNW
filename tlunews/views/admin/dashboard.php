@@ -1,4 +1,11 @@
 <?php
+  session_start();
+
+  
+  if (!isset($_SESSION['user_id']) || !isset($_SESSION['username'])) {
+      header("Location: /views/admin/login.php");
+      exit();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +45,7 @@
         <p>This is your personal dashboard. You can access your account details, manage settings, or view analytics here.</p>
         
         <h3 class = 'text-center text-uppercase text-success my-3'>Quản lý tin tức</h3>
-        <a href="<?= DOMAIN.'views/admin/news/add.php'?>" class = 'btn btn-success'>Thêm mới</a>
+        <a href="index.php?controller=admin&action=add" class = 'btn btn-success'>Thêm mới</a>
         <form method="post">
             <button type="submit" class="logout-btn">Logout</button>
         </form>
@@ -64,7 +71,7 @@
       <td><img src="<?= $new->getImage();?>" alt=""></td>
       <td><?= $new->getCreatedAt();?></td>
       <td><?= $new->getCategoryId();?></td>
-      <td><a href="<?= DOMAIN.'views/admin/news/edit.php?id='.$new->getId()?>"><i class="bi bi-pen"></i></a></td>
+      <td><a href="index.php?controller=admin&action=edit&id=<?= $new->getID(); ?>"><i class="bi bi-pen"></i></a></td>
       <td><a href="<?= DOMAIN.'views/admin/news/delete.php?id='.$new->getId()?>"><i class="bi bi-pen"></i></a></td>
     </tr>
     <?php } ?>
