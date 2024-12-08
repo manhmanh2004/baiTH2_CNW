@@ -28,7 +28,7 @@
 
                 if ($stmt->execute()) {
                     
-                    header("Location: index.php?controller=admin&action=dashboards");
+                    header("Location:../../../dashboard.php");
                     exit();
                 } else {
                     echo "<script>alert('Có lỗi xảy ra, vui lòng thử lại!');</script>";
