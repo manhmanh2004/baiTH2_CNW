@@ -8,5 +8,15 @@
             include APP_ROOT.'/views/admin/news/index.php';
             
         }
+        public function login(){
+            $admin = new AdminService();
+            $user = $admin->getAdminusers();
+            $adminService = new AdminService();
+            $news = $adminService->getAllNews();
+            require APP_ROOT.'/views/admin/login.php';
+            }
+            public function dashboard(){
+                require APP_ROOT.'/views/admin/dashboard.php';
+            }
     }
 ?>

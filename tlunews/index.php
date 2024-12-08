@@ -12,7 +12,7 @@
     {
         require_once APP_ROOT.'/controllers/AdminController.php';
         $adminController = new AdminController();
-        $adminController->index() ;
+        $adminController->login() ;
     }
     // else if ($controller == 'home')
     // {
